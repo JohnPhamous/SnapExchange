@@ -1,0 +1,62 @@
+<html>
+<script>
+    function generateQRCode() {
+        var codeName = "TestingVariable"
+        var startNode = "Start \n"
+        var endNode = "End";
+        startNode += "Name: " + firstName.value.trim() + " " + lastName.value.trim() + "\n";
+        startNode += "Phone Number:" + phone.value.trim() + "\n";
+        startNode += "Email: " + mail.value.trim() + "\n";
+        startNode += "LinkedIn: " + linkedin.value.trim() + "\n";
+        startNode += "Website: " + website.value.trim() + "\n";
+        startNode += "Occupation: " + occupation.value.trim() + "\n";
+        startNode += "Facebook: " + facebook.value.trim() + "\n";
+        startNode += "Notes: " + notes.value.trim() + "\n";
+        startNode += endNode;
+
+        // Generates QR code based on input data
+        this.qrImage.style.display = 'none';
+        this.qrImage.src = "https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=200x200&chl=" +
+            encodeURIComponent(startNode);
+        this.qrImage.style.display = 'inline';
+        this.vcard.value = startNode;
+        this.vcard.style.display = 'inline';
+        this.vcardDiv.style.display = 'inline';
+        this.sampleQR.style.display = 'none';
+    }
+</script>
+
+<head>
+    <title>QR Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/custom.min.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/animation.css">
+
+<body>
+
+    <center><div>
+        <img class="logo fadeIn tossing" src="img/logo.png">
+        <br>
+        <br><br>
+        <div class="panel panel-primary slideUp" style="width:60%;">
+            <div class="panel-heading">
+                <h3 class="panel-title">SnapExchange</h3>
+            </div>
+            <div class="panel-body">
+                SnapExchange makes exchanging contact information easy. Simply generate a QR code to send and scan one to receive.
+            </div>
+        </div>
+        <input type="button" value="Contacts" class="btn btn-default fadeIn" >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" class="btn btn-primary fadeIn" value="Scanner">&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="generate.html" class="btn btn-default fadeIn">Generate QR</a>
+    </div></center>
+
+</body>
+
+</html>

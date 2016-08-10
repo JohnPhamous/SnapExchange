@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>SnapExchange</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <link rel="stylesheet" type="text/css" href="css/wrapper.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #dfdfdf;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        th {
+            background: #abcdef;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="postScan" style="text-align:center">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div id="example" class="thumbnail embed-responsive embed-responsive-4by3"></div>
+                    <div class="boxWrapper auto">
+                        <div id="hiddenImg"></div>
+                        <div id="qrContent" class="alert alert-info" role="alert">
+                            <!-- <p>No QR Code in sight.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <pre style="display:none">
+sayCheese.on('success', function() {
+	scanCode(sayCheese);
+});
+
+sayCheese.start();
+</pre>
+                    <form>
+                        <div class="form-group" style="display:none">
+                            <label for="videoSource">Select Camera</label>
+                            <select id="videoSource">
+                                <option selected>Default Camera</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <a class="btn btn-default btn-circle btn-xl fadeIn" href="index.html">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="afterScan" style="text-align:center; display:none">
+        <table class="myTable table table-striped table-hover">
+            <tr>
+                <th width="20%"></th>
+                <th width="80%">Details</th>
+            </tr>
+        </table>
+        <a class="btn btn-default btn-circle btn-xl fadeIn" href="index.html">Add to Contacts</a>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+    <script src="js/say-cheese.js"></script>
+
+    <script src="js/qr/grid.js"></script>
+    <script src="js/qr/version.js"></script>
+    <script src="js/qr/detector.js"></script>
+    <script src="js/qr/formatinf.js"></script>
+    <script src="js/qr/errorlevel.js"></script>
+    <script src="js/qr/bitmat.js"></script>
+    <script src="js/qr/datablock.js"></script>
+    <script src="js/qr/bmparser.js"></script>
+    <script src="js/qr/datamask.js"></script>
+    <script src="js/qr/rsdecoder.js"></script>
+    <script src="js/qr/gf256poly.js"></script>
+    <script src="js/qr/gf256.js"></script>
+    <script src="js/qr/decoder.js"></script>
+    <script src="js/qr/qrcode.js"></script>
+    <script src="js/qr/findpat.js"></script>
+    <script src="js/qr/alignpat.js"></script>
+    <script src="js/qr/databr.js"></script>
+
+    <script src="js/effects_saycheese.js"></script>
+
+    <script>
+        function name() {
+            document.write(contact_data[0])
+        }
+    </script>
+</body>
+
+</html>
